@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         verbose="true"
+         cacheResultFile=".phpunit.cache/test-results">
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+        <report>
+            <html outputDirectory=".coverage/html" />
+            <clover outputFile=".coverage/xml/clover.xml" />
+        </report>
+    </coverage>
+    <logging>
+        <junit outputFile=".phpunit/junit.xml" />
+    </logging>
+</phpunit>
